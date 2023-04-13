@@ -1,0 +1,22 @@
+.galeria{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+.carousel-control-next-icon{
+    background-color: brown;
+    
+}
+
+.carousel-control-prev-icon{
+    background-color: brown;
+}
+.imgDanza{
+    object-fit: contain;
+    width: 600px;
+    height: 600px;
+
+}

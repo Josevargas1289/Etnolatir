@@ -10,9 +10,9 @@ import 'boxicons';
 const NavBar = () => {
     return (
         <div className='navBar'>
-            <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+            <Navbar fixed='top' collapseOnSelect expand="lg" bg="primary" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to={'/'}>Etno<i class='bx bxs-heart bx-tada'></i>Latir</Navbar.Brand>
+                    <Navbar.Brand as={Link} to={'/'}>Etno<i className='bx bxs-heart bx-tada'></i>Latir</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
