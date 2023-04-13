@@ -2,9 +2,10 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 430px;
     margin: 0 auto;
+    padding: 2rem;
 }
 .carousel-control-next-icon{
     background-color: brown;
@@ -16,7 +17,28 @@
 }
 .imgDanza{
     object-fit: contain;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
+
+}
+
+@media (min-width: 900px) {
+
+    .galeria{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 630px;
+        margin: 0 auto;
+        margin-top: 6rem;
+        
+    }
+    .imgDanza{
+        object-fit: contain;
+        width: 100%;
+        height: 500px;
+    
+    }
 
 }

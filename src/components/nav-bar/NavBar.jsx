@@ -3,6 +3,7 @@ import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../nav-bar/navbar.css";
 import 'boxicons';
+import logoHorizonatl from "../../assets/logoH.png"
 
 
 
@@ -10,7 +11,7 @@ import 'boxicons';
 const NavBar = () => {
     return (
         <div className='navBar'>
-            <Navbar fixed='top' collapseOnSelect expand="lg" bg="primary" variant="dark">
+            <Navbar fixed='top' collapseOnSelect expand="lg" bg="info" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to={'/'}>Etno<i className='bx bxs-heart bx-tada'></i>Latir</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

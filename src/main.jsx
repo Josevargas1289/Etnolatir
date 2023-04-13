@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
-import "bootswatch/dist/flatly/bootstrap.min.css";
+import "bootswatch/dist/sandstone/bootstrap.min.css";
 import "./firebase"
 
 

@@ -4,6 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import '../galeria/galeria.css'
 
 
+
 const Galeria = () => {
 
     const [data, setData] = useState([]);
@@ -18,7 +19,7 @@ const Galeria = () => {
 
     return (
         <div className='galeria'>
-            <Carousel  slide={false} >
+            <Carousel  variant="dark" >
                 {
                     data[0]?.images?.map((d, index) => (
 
