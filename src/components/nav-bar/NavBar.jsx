@@ -2,8 +2,7 @@ import React from 'react';
 import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "../nav-bar/navbar.css";
-import 'boxicons';
-import logoHorizonatl from "../../assets/logoH.png"
+
 
 
 
@@ -23,13 +22,13 @@ const NavBar = () => {
                                 <NavDropdown.Divider />
 
                                 <NavDropdown.Item as={Link} to={'/año2023'}>2023</NavDropdown.Item>
-                                
-                              
                             </NavDropdown>
+                            <Nav.Link as={Link} to={'/galeria'}>Galeria</Nav.Link>
+
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to={'/galeria'}>Galeria</Nav.Link>
-                            <Nav.Link as={Link} to={'/eventos'}>Eventos</Nav.Link>
+                            <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
+                            <Nav.Link as={Link} to={'/admin'}>Configuración</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

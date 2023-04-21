@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Eventos = () => {
+const Galeria = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Eventos = () => {
     );
 };
 
-export default Eventos;
+export default Galeria;
