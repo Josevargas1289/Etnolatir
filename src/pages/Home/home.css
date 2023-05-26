@@ -1,55 +1,216 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
 
-.home{
-    
+.home {
     justify-content: flex-start;
     justify-content: flex-start;
     align-items: center;
     align-content: center;
+    margin-top: 6rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
     
-    padding-top: 7rem;
-  
-
-}
-.title{
+  }
+  .title {
     display: flex;
     flex-direction: column;
     text-align: justify;
-    gap: 1rem;
-    justify-content: flex-start; 
-}
-
-h1{
-    font-family: 'Poppins', sans-serif;
-    font-weight:800;
+    gap: 3rem;
+    padding: 2rem;
+  }
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
     color: #29abe0;
-    padding: 1rem;
-
-}
-.img-logo{
-    object-fit: contain;
-    width: 300px;
-    margin: 0;
+    padding: .5rem;
     
-}
-.paragraft{
-    padding: 1rem;
-}
-.bx{
-    color: rgba(255, 0, 0, 0.782);
-}
-.imgHome{
-    object-fit: contain;
+  }
+  .h1-title {
+    margin-top: 5rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .container-img-home {
+    display: flex;
+    margin-top: 2rem;
+    
+  }
+  .imgHome {
     width: 100%;
-    height: 300px;
-    margin-top: -2rem;
+  }
+
+  .activities {
+    background-color: #29abe0;
+    width: 100%;
+    height: 100vh;
+    
    
-}
-.activities{
-    background-color:#29abe0 ;
-    width: 100%;
-    height: 600px;
-    margin-top: -2rem;
-}
+  }
 
+  .h1-title-even{
+    padding-top: 5rem;
+    color: white;
+    margin-left: 2rem;
+   
 
+  }
+  .containerTradiciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: justify;
+    background-color: #29abe0;
+   
+    
+  }
+
+  
+  .h1-title-even-g{
+    color: white;
+    text-align: center;
+    
+  }
+  .img-eventos-recientes{
+    width: 50%;
+    
+  }
+  .container-texto-tradiciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+  }
+
+  .title-about{
+    margin-top: 2rem;
+  }
+  .about-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    text-align: justify;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: white;
+    box-shadow: 0px 0px 1px 0px #ccc ;
+    border: none;
+    
+
+  }
+  .h1-title-about{
+    margin-bottom: 5rem;
+    margin-top: 20rem;
+  }
+
+  .aboot-afrocolombianidad{
+    margin-top: 40rem;
+    
+  }
+ 
+
+@media (min-width: 900px) {
+    .home {
+        justify-content: flex-start;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        margin-top: 6rem;
+        margin: 0 auto;
+      }
+      .title {
+        display: flex;
+        flex-direction: row;
+        text-align: justify;
+        gap: 1rem;
+        justify-content: flex-start;
+        margin-left: 1rem;
+        margin: 0 auto;
+        padding: 0rem 5rem;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+      }
+      .h1-title {
+        margin-top: 8rem;
+        margin-left: 5rem;
+        margin-bottom: 2rem;
+        font-size: 50px;
+      }
+      
+      h1 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 800;
+        color: #29abe0;
+        
+      }
+      .img-logo {
+        object-fit: contain;
+        width: 300px;
+        margin: 0;
+      }
+      .paragraft {
+        padding: 1rem;
+      }
+      .bx {
+        color: rgba(255, 0, 0, 0.782);
+      }
+      
+      .container-img-home {
+        display: flex;
+        margin-top: 2rem;
+        background-color: aqua;
+      }
+      .imgHome {
+        width: 100%;
+       
+        
+      }
+      .activities {
+        background-color: #29abe0;
+        width: 100%;
+        height: 100vh;
+       
+      }
+      .container-texto-tradiciones{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+      }
+      .img-eventos-recientes{
+        width: 30%;
+        
+      }
+
+      .h1-title-even-g{
+        margin-left: 20%;
+        margin-bottom: -5%;
+      }
+      .container-about-tex{
+        display: flex;
+        padding: 4rem;
+      }
+
+      .h1-title-even{
+       
+        margin-left: 10rem;
+       
+    
+      }
+      .h1-title-about{
+        margin-left: 10rem;
+      }
+      
+
+}

@@ -1,6 +1,6 @@
 .footer {
     
-    background-color: rgba(0, 0, 0, 0.412);
+    background-color: #29abe0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -9,6 +9,8 @@
     display: flex;
     gap: .5rem;
     flex-direction: column;
+   margin-top: 10rem;
+ 
     
     
   }
@@ -17,4 +19,11 @@
     justify-content: center;
     align-items: center;
     gap: 15px;
+    
+  }
+
+  @media (min-width: 900px) {
+    .footer{
+      margin-top: 3rem;
+    }
   }

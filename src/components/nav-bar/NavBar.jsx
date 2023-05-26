@@ -10,7 +10,7 @@ import "../nav-bar/navbar.css";
 const NavBar = () => {
     return (
         <div className='navBar'>
-            <Navbar fixed='top' collapseOnSelect expand="lg" bg="info" variant="dark">
+            <Navbar style={{boxShadow: "1px 1px 8px .2px"}} fixed='top' collapseOnSelect expand="lg" bg="info" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to={'/'}>Etno<i className='bx bxs-heart bx-tada'></i>Latir</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

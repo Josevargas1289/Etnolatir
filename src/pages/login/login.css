@@ -1,3 +1,20 @@
-.loginContainer{
-    padding: 5rem;
+.login {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  box-shadow: 0px 0px 5px 0px #ccc;
+  width: 80%;
+  margin:  0 auto;
+  margin-top: 8rem;
+  padding: 5rem;
+  
 }
+.title-login{
+    text-align: center;
+}
+
+
