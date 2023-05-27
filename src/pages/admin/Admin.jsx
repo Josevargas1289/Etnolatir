@@ -130,7 +130,7 @@ const Admin = () => {
           <div className="Usuarios-config images-config">
             <h2>Carga de imagenes</h2>
             <form className="forms-images">
-              <div id="src-file2">
+              <div className="src-file2">
                 <input
                   className="select-images"
                   accept="image/*"
