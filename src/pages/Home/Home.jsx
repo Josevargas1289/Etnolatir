@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1 className="h1-title">Proyecto Etnoeducativo</h1>
+      <h1 className="h1-title title_ppal">Proyecto Etnoeducativo</h1>
       <div className="title">
         <img className="img-logo" src={logoHorizonatl} alt="" />
 
