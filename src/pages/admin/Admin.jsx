@@ -14,6 +14,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { v4 } from "uuid";
 import Select from "react-select";
+import Isloading from "../../components/isLoading/Isloading";
+import Footer from "../../components/footer/Footer";
 
 const auth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
@@ -21,6 +23,8 @@ const storage = getStorage(firebaseApp);
 
 const Admin = () => {
   const [files, setFiles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+ 
 
   const navigate = useNavigate();
 
@@ -30,10 +34,7 @@ const Admin = () => {
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
     registrarUsuario(email, password);
-  };
-
-
-
+  }
 
   async function registrarUsuario(email, password) {
     const infoUsuario = await createUserWithEmailAndPassword(
@@ -42,13 +43,14 @@ const Admin = () => {
       password
     )
       .then((usuarioFirebase) => {
+     
         alert("Usuario registrado exitosamente,");
-
         return usuarioFirebase;
+       
       })
       .catch((error) => {
         if (error) {
-          alert("el correo ya esta en uso");
+          alert("el correo ya esta en uso, o la contraseña no supera los 8 caracteres");
         }
       });
     console.log(infoUsuario.user.uid);
@@ -64,29 +66,29 @@ const Admin = () => {
     }
   };
 
-  // console.log(files);
 
-  const category  = [
-    {label: 'Arte', value: 'arte'},
-    {label: 'Gastronomia', value: 'gastronomia'},
-    {label: 'Tradiciones', value: 'tradiciones'},
-
+  const category = [
+    { label: "Arte", value: "arte" },
+    { label: "Gastronomia", value: "gastronomia" },
+    { label: "Tradiciones", value: "tradiciones" },
   ];
-  const [selectcategory, setSelectCategory]= useState(' ')
+  const [selectcategory, setSelectCategory] = useState(" ");
 
-  const handelSelectOnchange =({value})=>{
-    setSelectCategory(value)
-  }
+  const handelSelectOnchange = ({ value }) => {
+    setSelectCategory(value);
+  };
   // console.log(selectcategory);
 
-  const uploadImages = async () => {
+  const uploadImages = (isLoading) => {
     try {
-      await files.map((file) => {
-       const storageRef = ref(storage, `/${selectcategory}/${v4()}`);
-       const uploaImage =  uploadBytes(storageRef, file); 
-       console.log(uploaImage); 
+      files.map(async (file) => {
+        const storageRef = ref(storage, `/${selectcategory}/${v4()}`);
+        await uploadBytes(storageRef, file);
+        setTimeout(() => {
+          setIsLoading(false)
+        }, 5000);
+        
       });
-      alert("Las imagenes se cargaron correctamente");
     } catch (error) {
       alert(
         `Las imaganes no se cargaron a la base de datos ocurrio el siguiente error:${error}`
@@ -94,51 +96,57 @@ const Admin = () => {
     }
   };
 
-  
+  console.log(isLoading);
 
   return (
-    <div className="Container-config">
-      <h1>Configuración</h1>
+    <div>
+      {
+        isLoading ? <Isloading/> :
+        <div className="Container-config">
+        <h1>Configuración</h1>
 
-      <div className="Usuarios-config">
-        <h2>Usuarios</h2>
-        <form onSubmit={SumitHandler}>
-          <label>
-            Correo electronico:
-            <input type="email" id="email" />
-          </label>
+        <div className="Usuarios-config">
+          <h2>Usuarios</h2>
+          <form onSubmit={SumitHandler}>
+            <label>
+              Correo electronico:
+              <input type="email" id="email" />
+            </label>
 
-          <label>
-            Password:
-            <input type="password" id="password" />
-          </label>
+            <label>
+              Password:
+              <input type="password" id="password" />
+            </label>
 
-          <input type="submit" value="Resgistrarse" />
-        </form>
+            <input type="submit" value="Resgistrarse" />
+          </form>
+        </div>
+        <br />
+        <br />
+        <br />
+
+        <div>
+          <h2>Carga de imagenes</h2>
+          <form>
+            <input
+              accept="image/*"
+              multiple
+              type="file"
+              id="file"
+              onChange={SelectImages}
+            />
+            <label>Seleccionar la categoria</label>
+            <Select
+              options={category}
+              placeholder={"Seleccione la categoria"}
+              onChange={handelSelectOnchange}
+            />
+
+            <button onClick={()=>uploadImages(setIsLoading(true))}>Cargar Imagenes</button>
+          </form>
+        </div>
       </div>
-      <br />
-      <br />
-      <br />
-
-      <div>
-        <h2>Carga de imagenes</h2>
-        <form>
-          <input
-            accept="image/*"
-            multiple
-            type="file"
-            id="file"
-            onChange={SelectImages}
-          />
-          <label >Seleccionar la categoria</label>
-          <Select 
-          options={category} placeholder={'Seleccione la categoria'}
-          onChange={handelSelectOnchange}
-          />
-
-          <button onClick={uploadImages}>Cargar Imagenes</button>
-        </form>
-      </div>
+      }
     </div>
   );
 };

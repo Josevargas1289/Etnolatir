@@ -1,4 +1,58 @@
 .galeria{
-    padding: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 2rem;
+    box-shadow: 0px 0px 1px 0px #ccc;
+    padding: 2rem;
+   
   
+}
+.title-galeria{
+    font-size: 30px;
+    text-align: center;
+}
+
+.container-galeria{
+    padding: 5rem;
+  
+}
+.img-galeria{
+    width: 300px;
+    object-fit: contain;
+}
+
+.title-categoria{
+    font-size: 20px;
+}
+.arte{
+    color: brown;
+}
+.gastronomia{
+    color: green;
+}
+.tradiciones{
+    color: red;
+}
+
+
+@media (min-width: 900px) {
+    .img-galeria{
+        width: 700px;
+        object-fit: contain;
+    }
+
+    
+.title-categoria{
+    font-size: 50px;
+}
+.title-galeria{
+    font-size: 50px;
+    text-align: left;
+}
+
+
 }

@@ -1,0 +1,24 @@
+.sppiner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #ffffff;
+  
+}
+.visually-hidden{
+  color: black;
+}
+strong{
+  color: #29abe0;
+  font-weight: bold;
+}
+
+

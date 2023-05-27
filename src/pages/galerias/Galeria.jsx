@@ -1,58 +1,96 @@
-import React, { useEffect, Component } from "react";
+import React, { useEffect } from "react";
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 import firebaseApp from "../../firebase";
 import { Carousel } from "react-bootstrap";
 import { useState } from "react";
 import "../galerias/Galeria.css";
+import Footer from "../../components/footer/Footer";
 
-const storage = getStorage(firebaseApp);
-const gsReference = ref(storage, "gs://etno-latir.appspot.com/arte/");
-let pictures = [];
+const Galeria = () => {
+  const storage = getStorage(firebaseApp);
+  const gsReferenceArte = ref(storage, "gs://etno-latir.appspot.com/arte/");
+  const gsReferenceGastronomia = ref(
+    storage,
+    "gs://etno-latir.appspot.com/gastronomia/"
+  );
+  const gsReferenceTradiciones = ref(
+    storage,
+    "gs://etno-latir.appspot.com/tradiciones/"
+  );
 
-export default class Galeria extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      files: [],
-      load: false,
-    };
-  }
+  const [filesArte, setFilesArte] = useState([]);
+  const [filesGastronomia, setFileGastronomia] = useState([]);
+  const [filesTradiciones, setFileTradiciones] = useState([]);
 
-  componentDidMount() {
-    this.load();
-  }
+  const [load, setLoad] = useState(false);
 
-  load = async () => {
-    await listAll(gsReference).then((res) => {
-      res.items.map(async (itemRef) => {
-        await getDownloadURL(ref(storage, itemRef.location.path)).then(
-          (url) => {
-            pictures.push(url);
-            this.setState({
-              load: true,
-            });
-            this.setState((prevState) => ({
-              files: [...prevState.files, url],
-            }));
-            console.log(this.state.files);
-          }
-        );
+  listAll(gsReferenceArte).then((res) => {
+    res.items.map((itemRef) => {
+      getDownloadURL(ref(storage, itemRef._location.path_)).then((url) => {
+        setLoad(true);
+        setFilesArte((filesArte) => [...filesArte, url]);
       });
     });
-  };
+  });
 
-  render() {
-    return (
-      <div className="galeria">
-        <Carousel>
-          {this.state.load &&
-            this.state.files?.map((image, idx) => (
-              <Carousel.Item>
-                <img className="d-block w-100" src={image} key={idx} />
+  listAll(gsReferenceGastronomia).then((res) => {
+    res.items.map((itemRef) => {
+      getDownloadURL(ref(storage, itemRef._location.path_)).then((url) => {
+        setLoad(true);
+        setFileGastronomia((filesGastronomia) => [...filesGastronomia, url]);
+      });
+    });
+  });
+
+  listAll(gsReferenceTradiciones).then((res) => {
+    res.items.map((itemRef) => {
+      getDownloadURL(ref(storage, itemRef._location.path_)).then((url) => {
+        setLoad(true);
+        setFileTradiciones((filesTradiciones) => [...filesTradiciones, url]);
+      });
+    });
+  });
+  return (
+    <div className="container-galeria">
+      <h1 className="title-galeria ">Galería de imagenes</h1>
+      <div className="galeria ">
+        <h1 className="title-categoria arte ">Arte</h1>
+        <Carousel variant="dark">
+          {load &&
+            filesArte?.map((img, index) => (
+              <Carousel.Item key={index}>
+                <img className="img-galeria" src={img} alt="First slide" />
               </Carousel.Item>
             ))}
         </Carousel>
       </div>
-    );
-  }
-}
+
+      <div className="galeria gastronomia">
+        <h1 className="title-categoria gastronomia ">Gastronomía</h1>
+        <Carousel variant="dark">
+          {load &&
+            filesGastronomia?.map((img, index) => (
+              <Carousel.Item key={index}>
+                <img className="img-galeria" src={img} alt="First slide" />
+              </Carousel.Item>
+            ))}
+        </Carousel>
+      </div>
+
+      <div className="galeria tradiciones">
+        <h1 className="title-categoria tradiciones ">Tradiciones</h1>
+        <Carousel variant="dark">
+          {load &&
+            filesTradiciones?.map((img, index) => (
+              <Carousel.Item key={index}>
+                <img className="img-galeria" src={img} alt="First slide" />
+              </Carousel.Item>
+            ))}
+        </Carousel>
+      </div>
+      
+    </div>
+  );
+};
+
+export default Galeria;

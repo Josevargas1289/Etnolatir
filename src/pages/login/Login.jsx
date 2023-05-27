@@ -66,13 +66,13 @@ const Login = () => {
 
   const render = () => {
     const USER = localStorage.getItem("userSession");
-    return <div>{USER ? <h3>{USER.substring(0,1)}</h3> : <h3>inicia Sesion</h3>}</div>;
+    return <div>{USER ? <h3 className="letterUser">{USER.substring(0,1)}</h3> : <h3>inicia Sesion</h3>}</div>;
   };
 
   return (
     <div className="login">
       <div className="loginContainer">
-        <h1 className="title-login">Login test</h1>
+        <h1 className="title-login">Login</h1>
         {render()}
 
         <form onSubmit={initHandlert}>
