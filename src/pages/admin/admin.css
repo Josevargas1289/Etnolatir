@@ -36,7 +36,7 @@
 }
 .select-images{
     margin-bottom: 1rem;
-    background-color:#29abe0;
+    /* background-color:#29abe0; */
 
 }
 
@@ -90,5 +90,10 @@
     .Container-config{
       overflow-x: visible;
        
+    }
+    .select-images{
+     
+        background-color:#29abe0;
+    
     }
 }
