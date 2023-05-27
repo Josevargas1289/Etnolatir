@@ -43,6 +43,7 @@
     background-color: #29abe0;
     width: 100%;
     height: 100vh;
+    margin-top: -1.5rem;
     
    
   }
@@ -98,7 +99,7 @@
     align-content: center;
     align-items: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     text-align: justify;
     padding: 2rem;
     margin: 1rem;

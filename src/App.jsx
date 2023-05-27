@@ -11,15 +11,26 @@ import Login from './pages/login/Login'
 import ProtectedRoutes from './components/protetecRoutes'
 import Admin from './pages/admin/Admin'
 import Galeria from './pages/galerias/Galeria'
+import Isloading from './components/isLoading/Isloading'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoading, setIsLoading] = useState(true);
+
+  const load = () => {
+    setTimeout(() => setIsLoading(false), 2000);
+
+  }
+  load();
+ 
 
   return (
     <div className="App">
+
       <HashRouter>
-        <NavBar />
-        <Routes>
+      {isLoading ? <Isloading/> : <NavBar/>}  
+     
+        {
+          isLoading ? <Isloading/> : <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/año2022' element={<Year2022 />} />
           <Route path='/año2023' element={<Year2023 />} />
@@ -30,6 +41,8 @@ function App() {
             <Route path='/admin' element={<Admin/>} />
           </Route>
         </Routes>
+        }
+        
         <Footer />
       </HashRouter>
 
