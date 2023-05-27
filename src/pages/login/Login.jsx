@@ -8,6 +8,7 @@ const auth = getAuth(firebaseApp);
 
 const Login = () => {
   const navigate = useNavigate();
+  const USER = localStorage.getItem("userSession");
 
   async function initHandlert(e) {
     e.preventDefault();
@@ -66,7 +67,19 @@ const Login = () => {
 
   const render = () => {
     const USER = localStorage.getItem("userSession");
-    return <div>{USER ? <h3 className="letterUser">{USER.substring(0,1)}</h3> : <h3>inicia Sesion</h3>}</div>;
+    return (
+      <div>
+        {USER ? (
+          <h3 className="letterUser letter">
+            {USER.substring(0, 1).toUpperCase()}
+          </h3>
+        ) : (
+          <h3 className="letterUser">
+            <i class="bx bxs-user bx-lg"></i>
+          </h3>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -76,20 +89,28 @@ const Login = () => {
         {render()}
 
         <form onSubmit={initHandlert}>
-          <label>
-            Correo electronico:
-            <input type="email" id="email" />
+          <label className="label-email">
+            <i class="bx bxs-envelope"> Correo electronico:</i>
+
+            <input type="email" id="email" className="input-login" />
           </label>
 
-          <label>
-            Password:
-            <input type="password" id="password" />
+          <label className="label-email">
+            <i class="bx bxs-user-check"> Password:</i>
+            <input type="password" id="password" className="input-login" />
           </label>
 
-          <input type="submit" value="Iniciar Seción" />
+          <input
+            className="btn-login"
+            style={{ display: USER ? "none" : "block" }}
+            type="submit"
+            value="Iniciar Seción"
+          />
         </form>
         {ocultarBtnCerrarSesion() && (
-          <button onClick={() => closeSession()}>Cerrar sesíon</button>
+          <button className="btn-login" onClick={() => closeSession()}>
+            Cerrar sesíon
+          </button>
         )}
       </div>
     </div>

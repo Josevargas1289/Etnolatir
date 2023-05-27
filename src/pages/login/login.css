@@ -9,12 +9,70 @@
   box-shadow: 0px 0px 5px 0px #ccc;
   width: 80%;
   margin:  0 auto;
-  margin-top: 8rem;
-  padding: 5rem;
+  margin-top: 7rem;
+  padding: 3rem;
+  margin-bottom: -3rem;
   
 }
 .title-login{
     text-align: center;
+}
+.letterUser{
+  background-color: #29abe0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 10px 5px  #ccc;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 3rem;
+}
+.letter{
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  
+
+}
+.label-email{
+  
+  padding-bottom: 1rem;
+  font-size: 18px;
+  color: black;
+}
+
+.input-login{
+  padding: 5px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px 3px #ccc;
+  margin-top: 3px;
+}
+.btn-login{
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  background-color: #29abe0;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 1rem;
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  box-shadow: 1px 1px 10px 1px black;
+  
+}
+
+.btn-login:hover{
+  background: #55bae3;
 }
 
 

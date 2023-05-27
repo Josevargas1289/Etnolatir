@@ -27,8 +27,8 @@ const NavBar = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link as={Link} to={'/login'}>Login</Nav.Link>
-                            <Nav.Link as={Link} to={'/admin'}>Configuración</Nav.Link>
+                            <Nav.Link  as={Link} to={'/login'}><i className='bx bxs-user bx-xs'></i> Login</Nav.Link>
+                            <Nav.Link as={Link} to={'/admin'}><i class='bx bxs-cog bx-xs'></i> Configuración</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
