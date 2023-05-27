@@ -25,7 +25,7 @@ const Year2022 = () => {
       </div>
       <div className="video-music">
         <iframe
-          width="560"
+          width="400"
           height="315"
           src="https://www.youtube.com/embed/A0GspH4Ynsc"
           title="YouTube video player"

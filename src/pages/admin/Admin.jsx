@@ -77,18 +77,16 @@ const Admin = () => {
   };
   // console.log(selectcategory);
 
-  const uploadImages = (isLoading) => {
+  const uploadImages = () => {
     try {
       files.map(async (file) => {
         const storageRef = ref(storage, `/${selectcategory}/${v4()}`);
         await uploadBytes(storageRef, file);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 5000);
       });
-    } catch (error) {
+      setTimeout(() => setIsLoading(false), 5000);
+    } catch (err) {
       alert(
-        `Las imaganes no se cargaron a la base de datos ocurrio el siguiente error:${error}`
+        `Las imaganes no se cargaron a la base de datos ocurrio el siguiente error:${err}`
       );
     }
   };
@@ -122,10 +120,8 @@ const Admin = () => {
                 type="submit"
                 value="Resgistrarse"
               />
-              
             </form>
-            <i class='bx bxs-user-circle bx-lg bx-order'></i>
-            
+            <i class="bx bxs-user-circle bx-lg bx-order"></i>
           </div>
           <br />
           <br />
@@ -134,28 +130,32 @@ const Admin = () => {
           <div className="Usuarios-config images-config">
             <h2>Carga de imagenes</h2>
             <form className="forms-images">
-              <input
-                className="select-images"
-                accept="image/*"
-                multiple
-                type="file"
-                id="file"
-                onChange={SelectImages}
-              />
-              
+              <div id="src-file2">
+                <input
+                  className="select-images"
+                  accept="image/*"
+                  multiple
+                  type="file"
+                  id="file"
+                  onChange={SelectImages}
+                />
+              </div>
+
               <Select
                 options={category}
                 placeholder={"Seleccione la categoria"}
                 onChange={handelSelectOnchange}
               />
 
-              <button className="input-user" onClick={() => uploadImages(setIsLoading(true))}>
+              <button
+                className="input-user"
+                onClick={() => uploadImages(setIsLoading(true))}
+              >
                 Cargar Imagenes
               </button>
             </form>
-            <i class='bx bxs-image-add bx-lg bx-order '></i>
+            <i class="bx bxs-image-add bx-lg bx-order "></i>
           </div>
-          
         </div>
       )}
     </div>

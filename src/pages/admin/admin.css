@@ -2,6 +2,7 @@
     margin: 1rem;
     display: flex;
     flex-direction: column;
+   
 }
 .title-ppal-configuration{
     margin-top: 4rem;
@@ -34,10 +35,9 @@
 .select-images{
     margin-bottom: 1rem;
     background-color:#29abe0;
-    border-radius: 0px 10px 10px 0px;
-    
-    
+
 }
+
 
 .forms-images >input{
     background-color: #89d2ef;
@@ -78,5 +78,10 @@
         top: 2rem;
         display: block;
     
+    }
+
+    .Container-config{
+      overflow-x: visible;
+       
     }
 }
