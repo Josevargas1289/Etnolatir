@@ -11,6 +11,7 @@
     margin-top: 4rem;
     overflow-x: hidden;
     overflow-y: hidden;
+    
 }
 
 h1 {
@@ -22,10 +23,33 @@ h1 {
   .title-paragraft {
     display: flex;
     flex-direction: column;
-    margin: 2rem;
+    margin: 0rem 2rem;
+    /* margin-bottom: -1rem; */
    
   }
   .paragraft{
     text-align: justify;
 
+  }
+  .video-music{
+     width:340px;
+    height: 250px;
+    background-color: #29abe0;
+  }
+
+ 
+
+
+  @media (min-width: 900px){
+    .video-music{
+        width:640px;
+       height: 350px;
+     }
+
+     .experiencias-2022{
+       padding-top: 4rem;
+       padding-left: 8rem;
+       padding-right: 8rem;
+        
+    }
   }

@@ -25,9 +25,31 @@ const Year2022 = () => {
       </div>
       <div className="video-music">
         <iframe
-          width="340"
-          height="315"
+          //   width="340"
+          //   height="250"
+          className="video-music"
           src="https://www.youtube.com/embed/A0GspH4Ynsc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div className="title-paragraft">
+        <h1 className=".h1-title">Proyecto educativo comunitario</h1>
+        <p className="paragraft">
+          Conozca el PEC ( Proyecto Educativo Institucional) donde se explica el
+          proceso que definió el carácter Etnoeducativo de nuestra Institución
+          Educativa ( Diagnostico, sensibilización y sistematización), como una
+          atención a la identidad y al empoderamiento de nuestra comunidad desde
+          su legado cultural.
+        </p>
+      </div>
+      <div className="video-music">
+        <iframe
+          className="video-music"
+          src="https://www.youtube.com/embed/Zb4xs4fPagk"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
