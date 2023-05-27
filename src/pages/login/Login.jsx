@@ -3,6 +3,7 @@ import "../login/login.css";
 import firebaseApp from "../../firebase";
 import { getAuth, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import { Navigate, useNavigate } from "react-router-dom";
+import logoH from "../../assets/Proyectoetno.png";
 
 const auth = getAuth(firebaseApp);
 
@@ -75,7 +76,7 @@ const Login = () => {
           </h3>
         ) : (
           <h3 className="letterUser">
-            <i class="bx bxs-user bx-lg"></i>
+            <i className="bx bxs-user bx-lg"></i>
           </h3>
         )}
       </div>
@@ -83,36 +84,41 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="loginContainer">
-        <h1 className="title-login">Login</h1>
-        {render()}
+    <div className="container-login">
+      <div className="login">
+        <div className="loginContainer">
+          <h1 className="title-login">Login</h1>
+          {render()}
 
-        <form onSubmit={initHandlert}>
-          <label className="label-email">
-            <i class="bx bxs-envelope"> Correo electronico:</i>
+          <form onSubmit={initHandlert}>
+            <label className="label-email">
+              <i className="bx bxs-envelope"> Correo electronico:</i>
 
-            <input type="email" id="email" className="input-login" />
-          </label>
+              <input type="email" id="email" className="input-login" />
+            </label>
 
-          <label className="label-email">
-            <i class="bx bxs-user-check"> Password:</i>
-            <input type="password" id="password" className="input-login" />
-          </label>
+            <label className="label-email">
+              <i className="bx bxs-user-check"> Password:</i>
+              <input type="password" id="password" className="input-login" />
+            </label>
 
-          <input
-            className="btn-login"
-            style={{ display: USER ? "none" : "block" }}
-            type="submit"
-            value="Iniciar Seción"
-          />
-        </form>
-        {ocultarBtnCerrarSesion() && (
-          <button className="btn-login" onClick={() => closeSession()}>
-            Cerrar sesíon
-          </button>
-        )}
+            <input
+              className="btn-login"
+              style={{ display: USER ? "none" : "block" }}
+              type="submit"
+              value="Iniciar Seción"
+            />
+          </form>
+          {ocultarBtnCerrarSesion() && (
+            <button className="btn-login" onClick={() => closeSession()}>
+              Cerrar sesíon
+            </button>
+          )}
+        </div>
+        
       </div>
+      <img className="imglogindestok" src={logoH} alt="" />
+      
     </div>
   );
 };

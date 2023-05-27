@@ -7,9 +7,11 @@
     padding: 15px;
     text-align: center;
     display: flex;
-    gap: .5rem;
+    padding-top: 2rem;
     flex-direction: column;
-   margin-top: 10rem;
+    margin-top: 10rem;
+    box-shadow: 1px 1px 10px 1px black;
+    
  
     
     

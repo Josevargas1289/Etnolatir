@@ -1,3 +1,5 @@
+
+
 .login {
   overflow-x: hidden;
   display: flex;
@@ -13,6 +15,9 @@
   padding: 3rem;
   margin-bottom: -3rem;
   
+}
+.imglogindestok{
+display: none;
 }
 .title-login{
     text-align: center;
@@ -32,6 +37,7 @@
   color: white;
   margin-bottom: 3rem;
 }
+
 .letter{
   font-size: 50px;
   font-weight: bold;
@@ -75,4 +81,63 @@
   background: #55bae3;
 }
 
-
+@media (min-width: 900px) {
+  .login {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    box-shadow: 0px 0px 5px 0px #ccc;
+    width: 30%;
+    margin:  10rem;
+    margin-top: 8rem;
+    padding: 2rem;
+    margin-bottom: -.5rem;
+    
+    
+  }
+  .letterUser{
+    background-color: #29abe0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px 5px  #ccc;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  .input-login{
+    padding: 5px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px 3px #ccc;
+    margin-top: 3px;
+    width: 100%;
+  }
+  
+  .imglogindestok{
+    display: flex;
+    width: 600px;
+    object-fit: contain;
+    position: absolute;
+    top: 18rem;
+    right: 3rem;
+    
+   
+    
+    }
+  .bxs-envelope {
+    color: black;
+  }
+  .bxs-user-check{
+    color: black;
+  }
+ 
+}

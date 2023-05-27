@@ -2,4 +2,6 @@
     object-fit: contain;
     width: 120px;
 }
-
+.bxs-heart{
+    color: red;
+}

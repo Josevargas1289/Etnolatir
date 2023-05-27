@@ -12,7 +12,7 @@ const NavBar = () => {
         <div className='navBar'>
             <Navbar style={{boxShadow: "1px 1px 8px .2px"}} fixed='top' collapseOnSelect expand="lg" bg="info" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to={'/'}>Etno<i className='bx bxs-heart bx-tada'></i>Latir</Navbar.Brand>
+                    <Navbar.Brand as={Link} to={'/'}>Etno<i className='bx bxs-heart bx-tada '></i>Latir</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -28,7 +28,7 @@ const NavBar = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link  as={Link} to={'/login'}><i className='bx bxs-user bx-xs'></i> Login</Nav.Link>
-                            <Nav.Link as={Link} to={'/admin'}><i class='bx bxs-cog bx-xs'></i> Configuración</Nav.Link>
+                            <Nav.Link as={Link} to={'/admin'}><i className='bx bxs-cog bx-xs'></i> Configuración</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

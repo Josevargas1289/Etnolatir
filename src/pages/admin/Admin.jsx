@@ -24,7 +24,6 @@ const storage = getStorage(firebaseApp);
 const Admin = () => {
   const [files, setFiles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
- 
 
   const navigate = useNavigate();
 
@@ -43,14 +42,14 @@ const Admin = () => {
       password
     )
       .then((usuarioFirebase) => {
-     
         alert("Usuario registrado exitosamente,");
         return usuarioFirebase;
-       
       })
       .catch((error) => {
         if (error) {
-          alert("el correo ya esta en uso, o la contraseña no supera los 8 caracteres");
+          alert(
+            "el correo ya esta en uso, o la contraseña no supera los 8 caracteres"
+          );
         }
       });
     console.log(infoUsuario.user.uid);
@@ -65,7 +64,6 @@ const Admin = () => {
       setFiles((prevState) => [...prevState, newImage]);
     }
   };
-
 
   const category = [
     { label: "Arte", value: "arte" },
@@ -85,9 +83,8 @@ const Admin = () => {
         const storageRef = ref(storage, `/${selectcategory}/${v4()}`);
         await uploadBytes(storageRef, file);
         setTimeout(() => {
-          setIsLoading(false)
+          setIsLoading(false);
         }, 5000);
-        
       });
     } catch (error) {
       alert(
@@ -100,53 +97,67 @@ const Admin = () => {
 
   return (
     <div>
-      {
-        isLoading ? <Isloading/> :
+      {isLoading ? (
+        <Isloading />
+      ) : (
         <div className="Container-config">
-        <h1>Configuración</h1>
+          <h1 className="title-ppal-configuration">Configuración</h1>
 
-        <div className="Usuarios-config">
-          <h2>Usuarios</h2>
-          <form onSubmit={SumitHandler}>
-            <label>
-              Correo electronico:
-              <input type="email" id="email" />
-            </label>
+          <div className="Usuarios-config">
+            <h2>Usuarios</h2>
+            <form className="form-users" onSubmit={SumitHandler}>
+              <label>
+                <i className="bx bxs-envelope"> Correo electronico:</i>
+                <input className="input-config" type="email" id="email" />
+              </label>
 
-            <label>
-              Password:
-              <input type="password" id="password" />
-            </label>
+              <label className="password-label">
+                <i className="bx bxs-user-check"> Password:</i>
 
-            <input type="submit" value="Resgistrarse" />
-          </form>
+                <input className="input-config" type="password" id="password" />
+              </label>
+
+              <input
+                className="input-user"
+                type="submit"
+                value="Resgistrarse"
+              />
+              
+            </form>
+            <i class='bx bxs-user-circle bx-lg bx-order'></i>
+            
+          </div>
+          <br />
+          <br />
+          <br />
+
+          <div className="Usuarios-config images-config">
+            <h2>Carga de imagenes</h2>
+            <form className="forms-images">
+              <input
+                className="select-images"
+                accept="image/*"
+                multiple
+                type="file"
+                id="file"
+                onChange={SelectImages}
+              />
+              
+              <Select
+                options={category}
+                placeholder={"Seleccione la categoria"}
+                onChange={handelSelectOnchange}
+              />
+
+              <button className="input-user" onClick={() => uploadImages(setIsLoading(true))}>
+                Cargar Imagenes
+              </button>
+            </form>
+            <i class='bx bxs-image-add bx-lg bx-order '></i>
+          </div>
+          
         </div>
-        <br />
-        <br />
-        <br />
-
-        <div>
-          <h2>Carga de imagenes</h2>
-          <form>
-            <input
-              accept="image/*"
-              multiple
-              type="file"
-              id="file"
-              onChange={SelectImages}
-            />
-            <label>Seleccionar la categoria</label>
-            <Select
-              options={category}
-              placeholder={"Seleccione la categoria"}
-              onChange={handelSelectOnchange}
-            />
-
-            <button onClick={()=>uploadImages(setIsLoading(true))}>Cargar Imagenes</button>
-          </form>
-        </div>
-      </div>
-      }
+      )}
     </div>
   );
 };
