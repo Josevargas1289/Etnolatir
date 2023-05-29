@@ -60,7 +60,7 @@ useEffect(()=>{
 // console.log('ver este',filesArte);
   return (
     <div className="container-galeria">
-      <h1 className="title-galeria ">Galería de imagenes</h1>
+      <h1 className="title-galeria ">Galería de imágenes</h1>
       <div className="galeria ">
         <h1 className="title-categoria arte ">Arte</h1>
         <Carousel variant="dark">
