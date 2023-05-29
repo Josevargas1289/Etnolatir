@@ -19,9 +19,9 @@ const NavBar = () => {
                             <Nav.Link as={Link} to={'/'}>Home</Nav.Link>
                             <NavDropdown title="Experiencias Significativas" id="collasible-nav-dropdown">
                                 <NavDropdown.Item as={Link} to={'/año2022'}>2022</NavDropdown.Item>
-                                <NavDropdown.Divider />
+                                {/* <NavDropdown.Divider /> */}
 
-                                <NavDropdown.Item as={Link} to={'/año2023'}>2023</NavDropdown.Item>
+                                {/* <NavDropdown.Item as={Link} to={'/año2023'}>2023</NavDropdown.Item> */}
                             </NavDropdown>
                             <Nav.Link as={Link} to={'/galeria'}>Galeria</Nav.Link>
 
