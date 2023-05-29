@@ -57,7 +57,7 @@ useEffect(()=>{
 
 },[])
 
-console.log('ver este',filesArte);
+// console.log('ver este',filesArte);
   return (
     <div className="container-galeria">
       <h1 className="title-galeria ">Galería de imagenes</h1>

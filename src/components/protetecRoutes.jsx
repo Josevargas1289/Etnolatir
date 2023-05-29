@@ -12,7 +12,7 @@ const ProtectedRoutes = () => {
 
     const USER = localStorage.getItem("userSession");
 
-    console.log('prueba', USER);
+    // console.log('prueba', USER);
     if (USER) {
         return <Admin/>
     } else {

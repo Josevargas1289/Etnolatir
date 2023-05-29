@@ -16,7 +16,6 @@ import { v4 } from "uuid";
 import Select from "react-select";
 import Isloading from "../../components/isLoading/Isloading";
 
-
 const auth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
 const storage = getStorage(firebaseApp);
@@ -25,7 +24,7 @@ const Admin = () => {
   const [files, setFiles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   function SumitHandler(e) {
     e.preventDefault();
@@ -52,7 +51,7 @@ const Admin = () => {
           );
         }
       });
-    console.log(infoUsuario.user.uid);
+    // console.log(infoUsuario.user.uid);
     const docuRef = doc(firestore, `usuarios/${infoUsuario.user.uid}`);
     setDoc(docuRef, { correo: email });
   }
@@ -91,7 +90,7 @@ const Admin = () => {
     }
   };
 
-  console.log(isLoading);
+  // console.log(isLoading);
 
   return (
     <div>
@@ -121,7 +120,7 @@ const Admin = () => {
                 value="Resgistrarse"
               />
             </form>
-            <i class="bx bxs-user-circle bx-lg bx-order"></i>
+            <i className="bx bxs-user-circle bx-lg bx-order"></i>
           </div>
           <br />
           <br />
@@ -154,7 +153,7 @@ const Admin = () => {
                 Cargar Imagenes
               </button>
             </form>
-            <i class="bx bxs-image-add bx-lg bx-order "></i>
+            <i className="bx bxs-image-add bx-lg bx-order "></i>
           </div>
         </div>
       )}
