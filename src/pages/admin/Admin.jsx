@@ -15,7 +15,7 @@ import { useState } from "react";
 import { v4 } from "uuid";
 import Select from "react-select";
 import Isloading from "../../components/isLoading/Isloading";
-import Footer from "../../components/footer/Footer";
+
 
 const auth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);

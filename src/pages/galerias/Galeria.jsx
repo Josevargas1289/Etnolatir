@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
-import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
+
+import { getStorage, ref, getDownloadURL, listAll,  } from "firebase/storage";
 import firebaseApp from "../../firebase";
 import { Carousel } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../galerias/Galeria.css";
-import Footer from "../../components/footer/Footer";
+
 
 const Galeria = () => {
   const storage = getStorage(firebaseApp);
+
   const gsReferenceArte = ref(storage, "gs://etno-latir.appspot.com/arte/");
   const gsReferenceGastronomia = ref(
     storage,
@@ -24,6 +25,8 @@ const Galeria = () => {
 
   const [load, setLoad] = useState(false);
 
+useEffect(()=>{
+  
   listAll(gsReferenceArte).then((res) => {
     res.items.map((itemRef) => {
       getDownloadURL(ref(storage, itemRef._location.path_)).then((url) => {
@@ -32,7 +35,7 @@ const Galeria = () => {
       });
     });
   });
-
+  
   listAll(gsReferenceGastronomia).then((res) => {
     res.items.map((itemRef) => {
       getDownloadURL(ref(storage, itemRef._location.path_)).then((url) => {
@@ -50,6 +53,11 @@ const Galeria = () => {
       });
     });
   });
+
+
+},[])
+
+console.log('ver este',filesArte);
   return (
     <div className="container-galeria">
       <h1 className="title-galeria ">Galería de imagenes</h1>
