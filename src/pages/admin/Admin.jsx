@@ -81,6 +81,7 @@ const Admin = () => {
       files.map(async (file) => {
         const storageRef = ref(storage, `/${selectcategory}/${v4()}`);
         await uploadBytes(storageRef, file);
+        setFiles([])
       });
       setTimeout(() => setIsLoading(false), 5000);
     } catch (err) {
@@ -146,7 +147,8 @@ const Admin = () => {
                 onChange={handelSelectOnchange}
               />
 
-              <button
+              <button 
+                disabled ={files.length <= 0 }
                 className="input-user"
                 onClick={() => uploadImages(setIsLoading(true))}
               >
@@ -162,49 +164,3 @@ const Admin = () => {
 };
 
 export default Admin;
-//onChange={handleFile}
-
-/*
-
-import { useEffect, useState } from 'react';
-import { getFirestore, doc, getDoc } from 'firebase/firestore'; 
-import { Carousel } from 'react-bootstrap';
-import '../galeria/galeria.css'
-
-
-
-const Galeria = () => {
-
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        const querydb = getFirestore();
-        const queryArray = doc(querydb, 'danza', 'aT7vyk2m73bm5Y5DBTIu');
-        getDoc(queryArray)
-            .then(res => setData([{ id: res.id, ...res.data() }]));
-
-    }, []);
-
-    return (
-        <div className='galeria'>
-            <Carousel  variant="dark" >
-                {
-                    data[0]?.images?.map((d, index) => (
-
-                        <Carousel.Item key={index}  >
-                            <img
-                                className="d-block w-100 imgDanza"
-                                src={d}
-                                alt="First slide"
-                            />
-                        </Carousel.Item>
-                    ))
-                }
-            </Carousel>
-        </div>
-    );
-};
-
-export default Galeria;
-
-*/
